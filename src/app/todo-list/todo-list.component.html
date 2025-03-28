@@ -1,0 +1,12 @@
+<div class="container">
+    <input type="text" [(ngModel)]="todo" placeholder="Add Todo" /> &nbsp;
+    <button (click)="addTodo()">Add Todo</button>
+
+    <ul>
+        @for(t of todos; track t) {
+        <li><span [class.completed]="t.completed">{{t.title}}</span></li><br>
+        <button class="primary" (click)="toggleTodo(t)">{{t.completed ? 'Undo' : 'Complete'}}</button> &nbsp;
+        <button class="primary" (click)="removeTodo(t.id)">Remove Todo</button>
+        }
+    </ul>
+</div>

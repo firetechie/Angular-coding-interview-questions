@@ -1,0 +1,14 @@
+<div class="image-carousel">
+  <button (click)="first()">First</button>
+  <button (click)="prev()">Prev</button>
+
+  <div class="image-container">
+    @if (images.length){
+    <img [src]="images[currentIndex]">
+    }
+  </div>
+
+  <button (click)="next()">Next</button>
+  <button (click)="last()">Last</button>
+  <button (click)="shuffle()">Shuffle</button>
+</div>

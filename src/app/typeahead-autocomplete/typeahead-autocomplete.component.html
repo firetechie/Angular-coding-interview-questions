@@ -1,0 +1,14 @@
+<div class="autocomplete-container">
+    <input type="text" placeholder="Search fruits..." [(ngModel)]="searchTerm" (keyup)="onSearchChange(searchTerm)" />
+
+    <!-- Suggestion List -->
+    @if (filteredItems.length > 0) {
+    <ul class="suggestions">
+        @for (item of filteredItems; track $index) {
+        <li (click)="selectItem(item)">
+            {{ item }}
+        </li>
+        }
+    </ul>
+    }
+</div>
